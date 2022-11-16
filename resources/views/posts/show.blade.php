@@ -51,9 +51,9 @@
                 </div>
 
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                    @if (auth()->user())
+                    @auth
                         <x-panel>
-                            <form method="POST" action="" class="rounded-xl space-x-4">
+                            <form method="POST" action="/posts/{{ $post->slug }}/comments" class="rounded-xl space-x-4">
                                 @csrf
                                 <header class="flex items-center">
                                     <img src="https://i.pravatar.cc/100?u={{ auth()->user()->id }}" alt=""
@@ -61,7 +61,7 @@
                                     <h2 class="ml-3">Want to participate?</h2>
                                 </header>
                                 <div class="mt-6">
-                                    <textarea name="boyd" class="w-full text-sm focus:outline-none focus:ring rounded-xl"
+                                    <textarea name="body" class="w-full text-sm focus:outline-none focus:ring rounded-xl"
                                         placeholder="Quick, think of something to say!" rows="5"></textarea>
                                 </div>
                                 <div class="flex justify-end mt-6 border-t border-gray-200 pt-6">
@@ -70,7 +70,12 @@
                                 </div>
                             </form>
                         </x-panel>
-                    @endif
+                    @else
+                        <p>
+                            <a href="/register" class="hover:underline font-semibold">Register</a> or <a href="/login"
+                                class="hover:underline font-semibold">Log in to leave a comments</a>
+                        </p>
+                    @endauth
 
                     @foreach ($post->comments as $comment)
                         <x-post-comment :comment="$comment" />
