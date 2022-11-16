@@ -50,23 +50,12 @@
                     </div>
                 </div>
 
-                <section class="col-span-8 col-start-5">
-                    <article class="flex">
-                        <div>
-                            <img src="https://i.pravater.cc/100" alt="">
-                        </div>
-                        <div>
-                            <header>
-                                <h3 class="font-bold">John Doe</h3>
-                                <p class="text-xs">
-                                    Posted <time>8 months ago</time>
-                                </p>
-                            </header>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore perspiciatis velit
-                                atque ea natus ratione aliquam incidunt facere, tenetur id. Quia modi, aperiam quidem
-                                quibusdam doloremque sit iusto repellat fugit!</p>
-                        </div>
-                    </article>
+                <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                    <x-post-comment />
+                    <x-post-comment />
+                    <x-post-comment />
+                    <x-post-comment />
+                    <x-post-comment />
                 </section>
             </article>
         </main>
