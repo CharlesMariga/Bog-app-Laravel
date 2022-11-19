@@ -6,18 +6,15 @@
     </h1>
 
     <div class="flex">
-        <aside class="w-48">
+        <aside class="w-48 flex-shrink-0">
             <h4 class="font-semibold mb-4">Links</h4>
             <ul>
                 <li>
-                    <a href="/admin/dashboard"
-                        class="{{ request()->is('/admin/dashboard' ? 'text-blue-500' : 'text-blue-500') }}">New
-                        Post</a>
+                    <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">All posts</a>
                 </li>
                 <li>
                     <a href="/admin/post/create"
-                        class="{{ request()->is('/admin/post/create' ? 'text-blue-500' : 'text-blue-500') }}">New
-                        Post</a>
+                        class="{{ request()->is('admin/post/create') ? 'text-blue-500' : '' }}">New post</a>
                 </li>
             </ul>
         </aside>
